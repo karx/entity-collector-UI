@@ -12,9 +12,14 @@ $("#login-button").click(function (event) {
     postData('https://neo4jstg.edvantalabs.com/boosted/api/entity-collector', toSend)
         .then(data => {
             console.log(data); // JSON data parsed by `data.json()` call
+            $("#user").text(data.actor.username);
+            $("#verb").text(data.verb);
+            document.querySelector('#data').data = data.value;
         });
     $('form').fadeOut(500);
     $('.wrapper').addClass('form-success');
+
+    $("#showResponse").addClass('show');
 
 });
 async function postData(url = '', data = {}) {

@@ -8,6 +8,8 @@
     <title>Entity Collector UI</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="module" src="./custom-elements.min.js"></script>
+    <script type="module" src="./json-viewer.js"></script>
 </head>
 
 <body>
@@ -21,6 +23,20 @@
                 <input id="sentence" type="text" placeholder="Sentence">
                 <button type="submit" id="login-button">Submit</button>
             </form>
+
+            <div id="showResponse" class="showResponse">
+                <div id="user" class="dd"></div>
+                <div class="arrow hor">
+                    <div class="line left-to-right"></div>
+                </div>
+                <div id="verb" class="dd"></div>
+                <div class="arrow hor">
+                    <div class="line left-to-right"></div>
+                </div>
+                <div id="entity" class="dd">
+                    <json-viewer id="data"></json-viewer>
+                </div>
+            </div>
         </div>
 
         <ul class="bg-bubbles">
@@ -36,6 +52,7 @@
             <li></li>
         </ul>
     </div>
+
     <script src="main.js"></script>
 </body>
 
